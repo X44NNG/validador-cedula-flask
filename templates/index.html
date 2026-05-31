@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Validación de Cédulas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <h1>Sistema de Validación de Cédulas Ecuatorianas</h1>
+</div>
+
+<div class="card">
+
+    <h2>Consulta de Cédula</h2>
+
+    <form method="POST">
+
+        <label>Número de cédula</label>
+
+        <input
+            type="text"
+            name="cedula"
+            maxlength="10"
+            placeholder="Ingrese los 10 dígitos"
+            required>
+
+        <button type="submit">
+            Validar Cédula
+        </button>
+
+    </form>
+
+    {% if mensaje %}
+        <div class="resultado">
+            {{ mensaje }}
+        </div>
+    {% endif %}
+
+</div>
+
+<div class="footer">
+    © 2026 - Proyecto desarrollado en Python Flask
+</div>
+
+</body>
+</html>
